@@ -26,7 +26,9 @@ CodingEntrepreneurs : http://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg
 
 Mike Hibbert        : http://www.youtube.com/user/MickeySoFine1972
 
+
 For documentation on django and installation refer the below links:
 
 https://docs.djangoproject.com/en/1.6/contents/
+
 http://www.djangobook.com/en/2.0/index.html
