@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Stevens Bazaar</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/jumbotron.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/static/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+ <style>
+ /*Now the styles*/
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #ccc; 
+	font-family: arial, verdana, tahoma;
+}
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 30*4 = 760px;
+default width = 760/5 = 152px;
+*/
+
+.accordian {
+	width: 780px;
+	height: 340px;
+	overflow: hidden;
+	box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	-moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+	margin-left: 50px;
+	margin-bottom: 50px;
+	margin-top: 50px;
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+	width: 2000px;
+	/*This will give ample space to the last item to move
+	instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+	position: relative;
+	display: block;
+	width: 152px;
+	float: left;
+	
+	border-left: 1px solid #888;
+	
+	box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+	
+	/*Transitions to give animation effect*/
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	/*If you hover on the images now you should be able to 
+	see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 35px;}
+.accordian ul:hover li {width: 35px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+	display: block;
+}
+
+/*Image title styles*/
+.image_title {
+	background: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	left: 0; bottom: 0;	
+width: 640px;	
+
+}
+.image_title a {
+	display: block;
+	color: #fff;
+	text-decoration: none;
+	padding: 20px;
+	font-size: 16px;
+}
+ </style>
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" style="font-size:160%" href="/"><b>MIS 620 Fall 2014 Project</b></a>
+        </div>
+        
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a style="font-size:120%" href="/about-us"><b>About Us </b><span class="sr-only">(current)</span></a></li>
+            <li><a style="font-size:120%" href="/FAQs"><b>FAQs </b></a></li>
+            <li><a style="font-size:120%" href="/the-team"><b>Our Team </b></a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+           <!-- <li><a href="#">Link</a></li> -->
+            <li class="dropdown">
+              <a style="font-size:120%" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><b>Logon </b><span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/login">Login</a></li>
+                <li><a href="/register">Sign Up</a></li>
+                <li><a href="/search">Search</a></li>
+                <li class="divider"></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </nav>
+
+    <div class="jumbotron">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <br><br><img src="/static/images/StevensBazaar.png" style="width: 270px; height: 250px; padding-left: 20px;">
+            <h2><br> 
+              BUY, RENT & FREEBIES</h2>
+		</div>
+            <!-- We will make a simple accordian with hover effects 
+The markup will have a list with images and the titles-->
+<div class="accordian">
+	<ul>
+		<li>
+			<div class="image_title">
+				<a href="#">MacBook</a>
+			</div>
+			<a href="/FirstTimeUser">
+				<img src="/static/images/macbook.jpg"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Camera Bag</a>
+			</div>
+			<a href="/FirstTimeUser">
+				<img src="/static/images/bag.jpg"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Acoustic Guitar</a>
+			</div>
+			<a href="/FirstTimeUser">
+				<img src="/static/images/Guitar1.jpg"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Tamron Lens</a>
+			</div>
+			<a href="/FirstTimeUser">
+				<img src="/static/images/lens.jpg"/>
+			</a>
+		</li>
+		<li>
+			<div class="image_title">
+				<a href="#">Bedside Lamp Set</a>
+			</div>
+			<a href="/FirstTimeUser">
+				<img src="/static/images/Lamp.jpg"/>
+			</a>
+		</li>
+	</ul>
+</div>
+        </div>
+      </div>
+    </div>
+    
+  <div class="login">
+      <div  class="container">
+        <div class="row"> 
+          <div class="col-md-5">
+            <p><a class="btn btn-primary btn-lg btn-block" onclick="location.href='/login'" role="button">Login  </a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+    <br><br>
+    </div>
+    
+    <div class="register">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-5">
+            <p><a class="btn btn-primary btn-lg btn-block" onclick="location.href='/register'" role="button">Sign Up</a></p>  
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+    
+
+      <hr>
+
+      <footer>
+        <div class="col-md-4">
+          <p>MIS 620 Fall 2014</p>
+        </div>
+        <div class="col-md-4">
+          <p> Stevens Bazaar &nbsp;&nbsp;&nbsp;&nbsp; <a href="/Terms"><font color=#333><u>Terms of use</u></font></a></p>
+        </div>
+      </footer>
+  </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
