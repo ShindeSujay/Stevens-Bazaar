@@ -2,6 +2,8 @@ Stevens-Bazaar
 ==============
 
 Shared economy based online portal to buy, sell or rent stuff for student community.
+This website has been developed using python, HTML, CSS, Javascript.
+Django is the MTV framework used.
 
 main_page : This is the project with all the details of the apps, database, static file settings.
 signin    : This is the app for home page (home), registration (register_user), login (login), 
