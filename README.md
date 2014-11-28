@@ -18,7 +18,9 @@ post      : This is the app to post an advertisement (adpost), search an adverti
             
             
 For more details on the search logic, please refer the below link:
+
 http://julienphalip.com/post/2825034077/adding-search-to-a-django-site-in-a-snap
+
 
 For help with coding using python django the below youtube videos are very helpful.
 
