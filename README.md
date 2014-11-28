@@ -6,6 +6,7 @@ This website has been developed using python, HTML, CSS, Javascript.
 Django is the MTV framework used.
 
 main_page : This is the project with all the details of the apps, database, static file settings.
+
 signin    : This is the app for home page (home), registration (register_user), login (login), 
             logout (logout), authentication (auth_view), aboutus (aboutus), faqs (FAQs), team (team), 
             terms of use (terms) and other validations (register_success, invalid_email, firsttime, 
