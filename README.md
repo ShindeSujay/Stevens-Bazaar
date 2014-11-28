@@ -5,17 +5,20 @@ Shared economy based online portal to buy, sell or rent stuff for student commun
 This website has been developed using python, HTML, CSS, Javascript.
 Django is the MTV framework used.
 
-main_page : This is the project with all the details of the apps, database, static file settings.
+main_page : 
+This is the project with all the details of the apps, database, static file settings.
 
-signin    : This is the app for home page (home), registration (register_user), login (login), 
-            logout (logout), authentication (auth_view), aboutus (aboutus), faqs (FAQs), team (team), 
-            terms of use (terms) and other validations (register_success, invalid_email, firsttime, 
-            invalid_login, loggedin). Refer views.py for details on the logic. 
-            Refer forms.py for modification to registration form per our usage. 
-            We are validating if the email id is valid college email id before allowing user to register.
+signin    : 
+This is the app for home page (home), registration (register_user), login (login), 
+logout (logout), authentication (auth_view), aboutus (aboutus), faqs (FAQs), team (team), 
+terms of use (terms) and other validations (register_success, invalid_email, firsttime, 
+invalid_login, loggedin). Refer views.py for details on the logic. 
+Refer forms.py for modification to registration form per our usage. 
+We are validating if the email id is valid college email id before allowing user to register.
          
-post      : This is the app to post an advertisement (adpost), search an advertisement (search) (Details 
-            are mentioned in views.py about the search logic), view advertisement (posts_view). 
+post      : 
+This is the app to post an advertisement (adpost), search an advertisement (search) (Details 
+are mentioned in views.py about the search logic), view advertisement (posts_view). 
             
             
 For more details on the search logic, please refer the below link:
