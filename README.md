@@ -22,7 +22,7 @@ http://julienphalip.com/post/2825034077/adding-search-to-a-django-site-in-a-snap
 
 For help with coding using python django the below youtube videos are very helpful.
 
-CodingEntrepreneurs : http://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg
+CodingEntrepreneurs : http://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg 
 Mike Hibbert        : http://www.youtube.com/user/MickeySoFine1972
 
 For documentation on django and installation refer the below links:
